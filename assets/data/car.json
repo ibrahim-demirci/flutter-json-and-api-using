@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Mercedes",
+    "country": "German",
+    "foundation-date": 1980,
+    "model": [
+      {
+        "model-name": "A Series",
+        "price": 35000,
+        "fuel" : false
+      },
+      {
+        "model-name": "C Series",
+        "price": 55000,
+        "fuel" : true
+      }
+    ]
+  },
+  {
+  "name": "Audi",
+  "country": "German",
+  "foundation-date": 1970,
+  "model": [
+    {
+      "model-name": "A Series",
+      "price": 52000,
+      "fuel" : true
+    },
+    {
+      "model-name": "Q Series",
+      "price": 73000,
+      "fuel" : false
+    }
+  ]
+},
+  {
+    "name": "Renault",
+    "country": "France",
+    "foundation-date": 1910,
+    "model": [
+      {
+        "model-name": "Fluence Series",
+        "price": 10000,
+        "fuel" : true
+      },
+      {
+        "model-name": "Capture Series",
+        "price": 12000,
+        "fuel" : false
+      }
+    ]
+  }
+
+
+
+]
