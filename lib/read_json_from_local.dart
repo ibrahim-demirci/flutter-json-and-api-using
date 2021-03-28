@@ -3,13 +3,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 
+import 'models/car.dart';
+
 class LocalJson extends StatefulWidget {
   @override
   _LocalJsonState createState() => _LocalJsonState();
 }
 
 class _LocalJsonState extends State<LocalJson> {
-  List allCars;
+  List<Car> allCars;
 
   @override
   void initState() {
@@ -18,7 +20,6 @@ class _LocalJsonState extends State<LocalJson> {
     debugPrint("init state is run");
   }
 
-  //
   @override
   Widget build(BuildContext context) {
     debugPrint("build state is run");
@@ -38,8 +39,8 @@ class _LocalJsonState extends State<LocalJson> {
                       itemCount: allCars.length,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          subtitle: Text(allCars[index]["country"]),
-                          title: Text(allCars[index]["name"]),
+                          subtitle: Text(allCars[index].country),
+                          title: Text(allCars[index].name),
                         );
                       });
                 } else {
@@ -56,7 +57,8 @@ class _LocalJsonState extends State<LocalJson> {
     var jsonRead =
         await DefaultAssetBundle.of(context).loadString('assets/data/car.json');
 
-    List carList = json.decode(jsonRead.toString());
+    List<Car> carList = (json.decode(jsonRead) as List)
+        .map((mapStruct) => Car.fromJsonMap(mapStruct)).toList();
     return carList;
   }
 }
