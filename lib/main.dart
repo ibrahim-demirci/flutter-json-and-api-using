@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_json_api_work/read_json_from_local.dart';
+import 'package:flutter_json_api_work/read_json_from_remote.dart';
 
 /* json javascript object notation.
 * key ve valuelerdan olusur
@@ -24,6 +25,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,13 +40,26 @@ class MyApp extends StatelessWidget {
             FlatButton(
               color: Colors.green,
               child: Text(
-                'Open route',
+                'From Local',
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => LocalJson()),
+                );
+              },
+            ),
+            FlatButton(
+              color: Colors.orangeAccent,
+              child: Text(
+                'From Remote',
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RemoteJson()),
                 );
               },
             ),

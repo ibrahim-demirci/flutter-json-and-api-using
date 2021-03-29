@@ -53,7 +53,7 @@ class _LocalJsonState extends State<LocalJson> {
   }
 
   Future<List> readDataFromJson() async {
-    // await  mean methot is asynchronous and wait this resut  whatever.
+    // await  mean method is asynchronous and wait this result  whatever.
     var jsonRead =
         await DefaultAssetBundle.of(context).loadString('assets/data/car.json');
 
